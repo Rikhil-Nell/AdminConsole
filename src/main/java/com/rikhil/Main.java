@@ -12,8 +12,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+        //DB credentials
+        String url = System.getenv("DB_URL");
+        String username = System.getenv("DB_USERNAME");
+        String password = System.getenv("DB_PASSWORD");
+
         try (Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3306/test", "root", "Astatine85$$")) {
+                (url, username, password)) {
             EmployeeDAO employeeDAO = new EmployeeDAOImpl(connection);
 
             Scanner scanner = new Scanner(System.in);

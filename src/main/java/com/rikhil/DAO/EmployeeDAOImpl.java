@@ -23,8 +23,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         try(PreparedStatement statement = connection.prepareStatement(query)){
 
             statement.setInt(1,employee.getId());
-            statement.setString(1,employee.getName());
-            statement.setInt(1,employee.getId());
+            statement.setString(2,employee.getName());
+            statement.setInt(3,employee.getId());
             statement.executeUpdate();
 
         }catch(SQLException e){
