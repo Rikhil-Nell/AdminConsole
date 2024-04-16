@@ -7,10 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-    private Connection connection;
+    private final Connection connection;
 
     //constructor for establishing connection
 
@@ -24,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
             statement.setInt(1,employee.getId());
             statement.setString(2,employee.getName());
-            statement.setInt(3,employee.getId());
+            statement.setDouble(3,employee.getSalary());
             statement.executeUpdate();
 
         }catch(SQLException e){
