@@ -52,6 +52,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             statement.setInt(1, employee.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
+            
             e.printStackTrace();
             // Handle exceptions appropriately
         }
